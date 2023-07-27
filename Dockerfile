@@ -24,7 +24,7 @@ ENV HOST=$HOST
 EXPOSE $PORT
 
 # run the FastAPI application
-CMD ["uvicorn", "app.main:app", "--reload", "--host", "$HOST", "--port", "$PORT"]
+CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "9999"]
 
 FROM python:3.11-bullseye as langchain
 
@@ -52,4 +52,4 @@ ENV HOST=$HOST
 EXPOSE $PORT
 
 # run the FastAPI application
-CMD ["uvicorn", "app.main:app", "--reload", "--host", "$HOST", "--port", "$PORT"]
+CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "9999"]
