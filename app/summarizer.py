@@ -20,7 +20,9 @@ class Summarizer:
         openai.api_key = self.API_KEY
 
     def summarize(self, text: str, system_prompt: str = "") -> Tuple[str, str]:
-        """Send <text> to openAI and get a summary back"""
+        """Send <text> to openAI and get a summary back.
+        Returns a tuple: error, message. Note that either error or message may be None.
+        """
         if not system_prompt:
             system_prompt = self.system_prompt
         messages = [
@@ -28,7 +30,7 @@ class Summarizer:
             {"role": "user", "content": text}
         ]
 
-        # XXX FIXME: work with chunks 
+        # XXX FIXME: work with chunks
 
         try:
             if self.go_azure:
@@ -48,7 +50,7 @@ class Summarizer:
                     temperature=0.7,
                     top_p=0.95,
                     stop=None,
-                    max_tokens=self.max_tokens,     # TODO: Make sure this actually means, summarize in X token
+                    max_tokens=self.max_tokens,
                     n=1,
                 )
             result = response.choices[0].message.content
