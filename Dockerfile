@@ -14,9 +14,14 @@ RUN pip install -r requirements.txt
 COPY . .
 COPY .env .
 
+ARG PORT=80
+ARG HOST=0.0.0.0
+
+ENV PORT=${PORT}
+ENV HOST=${HOST}
 # expose the port for the FastAPI application
-EXPOSE 9999
+EXPOSE ${PORT}
 
 # run the FastAPI application
-CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "9999"]
+CMD ["uvicorn", "app.main:app", "--reload", "--host", "$HOST", "--port", "$PORT"]
 
