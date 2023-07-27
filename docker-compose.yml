@@ -7,10 +7,29 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: openai
     environment:
       PYTHON_PATH: /app
+      HOST: 0.0.0
+      PORT: 9999
     env_file: .env
     ports:
       - "9999:9999"
+    dns: 8.8.8.8
+    network_mode: host
+
+  langchain-summarizer:
+    image: langchain-summarizer:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: langchain
+    environment:
+      PYTHON_PATH: /app
+      HOST: 0.0.0
+      PORT: 1000
+    env_file: .env
+    ports:
+      - "1000:1000"
     dns: 8.8.8.8
     network_mode: host
