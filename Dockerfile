@@ -18,10 +18,10 @@ COPY .env .
 ARG PORT=9999
 ARG HOST=0.0.0.0
 
-ENV PORT=${PORT}
-ENV HOST=${HOST}
+ENV PORT=$PORT
+ENV HOST=$HOST
 # expose the port for the FastAPI application
-EXPOSE ${PORT}
+EXPOSE $PORT
 
 # run the FastAPI application
 CMD ["uvicorn", "app.main:app", "--reload", "--host", "$HOST", "--port", "$PORT"]
@@ -46,10 +46,10 @@ COPY .env .
 ARG PORT=9999
 ARG HOST=0.0.0.0
 
-ENV PORT=${PORT}
-ENV HOST=${HOST}
+ENV PORT=$PORT
+ENV HOST=$HOST
 # expose the port for the FastAPI application
-EXPOSE ${PORT}
+EXPOSE $PORT
 
 # run the FastAPI application
 CMD ["uvicorn", "app.main:app", "--reload", "--host", "$HOST", "--port", "$PORT"]
