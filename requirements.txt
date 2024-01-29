@@ -1,7 +1,7 @@
 fastapi==0.108.0
 MarkupSafe
 multidict
-openai==1.6.1
+openai==1.10.0
 openpyxl
 platformdirs
 pydantic
