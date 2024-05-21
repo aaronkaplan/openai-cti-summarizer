@@ -1,5 +1,4 @@
 
-version: "3"
 services:
   # The main microservice, serving the OpenAI summarizer
   #
@@ -14,19 +13,20 @@ services:
       PYTHON_PATH: /app
     env_file: .env
     ports:
-      - "9999:9999"
+      - "9998:9998"
     dns: 8.8.8.8
     # network_mode: host
     volumes:
       - ./app:/app
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.munch-cti.rule=Host(`munch-cti.lo-res.org`)"
-      - "traefik.http.routers.munch-cti.entrypoints=websecure"
-      - "traefik.http.routers.munch-cti.tls.certresolver=myresolver"
-      - "traefik.http.services.munch-cti.loadbalancer.server.port=9999"
+      - "traefik.http.routers.openai-summarizer.rule=Host(`munch-cti.lo-res.org`)"
+      - "traefik.http.routers.openai-summarizer.entrypoints=websecure"
+      - "traefik.http.routers.openai-summarizer.tls.certresolver=myresolver"
+      - "traefik.http.services.openai-summarizer.loadbalancer.server.port=9998"
     networks:
       - web
+    restart: unless-stopped
 
 networks:
   web:

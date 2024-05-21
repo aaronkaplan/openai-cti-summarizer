@@ -18,8 +18,8 @@ COPY .env /
 COPY VERSION.txt  /
 
 # expose the port for the FastAPI application
-EXPOSE 9999
+EXPOSE 9998
 
 # run the FastAPI application
-CMD ["uvicorn", "main:app", "--access-log", "--reload", "--host", "0.0.0.0", "--port", "9999"]
+CMD ["uvicorn", "main:app", "--access-log", "--reload", "--host", "0.0.0.0", "--port", "9998"]
 
