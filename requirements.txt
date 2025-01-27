@@ -1,4 +1,4 @@
-fastapi==0.115.6
+fastapi==0.115.7
 MarkupSafe
 multidict
 openai==1.59.3
