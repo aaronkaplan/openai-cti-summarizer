@@ -36,7 +36,7 @@ class Summarizer:
                 {api_version=},
                 {azure_endpoint=},
                 {azure_deployment=},
-                {api_key=}
+                api_key='***REDACTED***'
             """)
             self.client = AzureOpenAI(api_version=os.environ['OPENAI_API_VERSION'],
                                       azure_endpoint=os.environ['OPENAI_API_BASE'],
