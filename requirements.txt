@@ -1,14 +1,14 @@
-fastapi==0.136.1
+fastapi
 MarkupSafe
 multidict
-openai==2.37.0
+openai
 openpyxl
 platformdirs
 pydantic
 pydantic-settings
 python-multipart
 requests
-starlette
+starlette>=1.0.1
 uvicorn
 virtualenv
 Jinja2
