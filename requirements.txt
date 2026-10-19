@@ -8,7 +8,7 @@ pydantic
 pydantic-settings
 python-multipart
 requests
-starlette>=1.6.0
+starlette>=1.8.0
 uvicorn
 virtualenv
 Jinja2
